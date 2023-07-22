@@ -14,5 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.home.index', [
+        'title' => 'Dashboard'
+    ]);
+})->name('home');
+Route::get('product', function () {
+    return view('pages.home.index', [
+        'title' => 'Dashboard'
+    ]);
+})->name('product');
+Route::get('product/category', function () {
+    return view('pages.home.index', [
+        'title' => 'Dashboard'
+    ]);
+})->name('product/category');
+Route::get('product/gallery', function () {
+    return view('pages.home.index', [
+        'title' => 'Dashboard'
+    ]);
+})->name('product/gallery');
+Route::get('chat', function () {
+    return view('pages.home.index', [
+        'title' => 'Dashboard'
+    ]);
+})->name('chat');
