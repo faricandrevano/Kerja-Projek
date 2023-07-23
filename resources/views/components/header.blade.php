@@ -1,5 +1,5 @@
 <header>
-    <nav class="fixed z-50 w-full bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow-sm">
+    <nav class="fixed z-50 w-full bg-white border-gray-200 px-4 lg:px-6 py-3 dark:bg-gray-800 shadow-sm">
         <div class="flex flex-wrap justify-between items-center">
             <div class="flex justify-start items-center">
                 <button aria-expanded="false" aria-controls="mobile-menu-2" data-collapse-toggle="mobile-menu"
@@ -37,7 +37,7 @@
                             fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                {{-- <button type="button"
+                <button type="button"
                     class="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
                     <span class="sr-only">Open user menu</span>
@@ -56,7 +56,7 @@
                     id="dropdown">
                     <div class="py-3 px-4">
                         <span
-                            class="block text-sm font-semibold text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
+                            class="block text-sm font-semibold text-gray-900 dark:text-white">{{ auth()->user()->username }}</span>
                         <span
                             class="block text-sm font-light text-gray-500 truncate dark:text-gray-400">{{ auth()->user()->email }}</span>
                     </div>
@@ -82,7 +82,7 @@
                             </form>
                         </li>
                     </ul>
-                </div> --}}
+                </div>
             </div>
         </div>
     </nav>
