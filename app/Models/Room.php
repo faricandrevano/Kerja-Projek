@@ -14,7 +14,7 @@ class Room extends Model
 
     public function chats()
     {
-        return $this->chats(Chat::class);
+        return $this->hasMany(Chat::class);
     }
 
     public function user()

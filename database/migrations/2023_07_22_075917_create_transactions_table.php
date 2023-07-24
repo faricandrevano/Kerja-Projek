@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('code')->unique();
             $table->string('address');
             $table->integer('total');
             $table->enum('status', ['CONFIRMED', 'PROGRESS', 'FAILED', 'SUCCESS', 'WAITING'])->default('WAITING');
