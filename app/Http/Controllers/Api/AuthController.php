@@ -28,7 +28,7 @@ class AuthController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return ResponseFormatter::error(null, $validator->errors()->getMessages());
+                return ResponseFormatter::error(null, $validator->errors()->first());
             }
 
             User::create(array_merge(
@@ -36,7 +36,7 @@ class AuthController extends Controller
                 ['password' => bcrypt($request->password)]
             ));
 
-            if (!$token = auth('api')->attempt($validator->validated())) {
+            if (!$token = auth('api')->attempt($validator->validated(), true)) {
                 return ResponseFormatter::error(null, 'Unauthorized', 401);
             }
 
@@ -55,14 +55,14 @@ class AuthController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return ResponseFormatter::error(null, $validator->errors()->getMessages(), 422);
+                return ResponseFormatter::error(null, $validator->errors()->first(), 422);
             }
 
             $user = User::where('email', $request->email)->first();
 
             if ($user) {
                 if ($user->password) {
-                    if (!$token = auth('api')->attempt($validator->validated())) {
+                    if (!$token = auth('api')->attempt($validator->validated(), true)) {
                         return ResponseFormatter::error(null, 'Unauthorized', 401);
                     }
 

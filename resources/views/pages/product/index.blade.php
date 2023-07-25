@@ -66,9 +66,10 @@
                                             {{ $item->name }}
                                         </th>
                                         <td class="px-4 py-3">
-                                            @foreach ($item->galleries as $gallery)
-                                                <img class="h-8 rounded" src="{{ $gallery->url }}" alt="Gallery">
-                                            @endforeach
+                                            @if ($item->galleries->isNotEmpty())
+                                                <img class="h-8 rounded" src="{{ $item->galleries[0]->url }}"
+                                                    alt="Gallery">
+                                            @endif
                                         </td>
                                         <td class="px-4 py-3">Rp{{ number_format($item->price, 0, ',', '.') }}</td>
                                         <td class="px-4 py-3">{{ $item->category->name }}</td>
