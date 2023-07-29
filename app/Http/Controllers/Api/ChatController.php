@@ -89,7 +89,7 @@ class ChatController extends Controller
             if ($user) {
                 $limit = $request->input('limit', 10);
 
-                $chats = Chat::with(['user', 'product'])->where('room_id', $id);
+                $chats = Chat::with(['user', 'product', 'product.galleries', 'product.category'])->where('room_id', $id);
 
                 return ResponseFormatter::success(
                     $chats->paginate($limit),
