@@ -20,7 +20,9 @@ class TransactionController extends Controller
             if ($user) {
                 $limit = $request->input('limit', 10);
 
-                $transactions = Transaction::with(['products', 'products.product'])->where('user_id', $user->id);
+                $transactions = Transaction::with([
+                    'products', 'products.product', 'products.product.category', 'products.product.galleries'
+                ])->where('user_id', $user->id);
 
                 return ResponseFormatter::success(
                     $transactions->paginate($limit),
