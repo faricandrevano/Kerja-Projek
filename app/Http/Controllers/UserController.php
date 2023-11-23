@@ -18,6 +18,12 @@ class UserController extends Controller
             'user' => $user,
         ]);
     }
+    public function userShow () {
+        return view('pages.user.index',[
+            'title' => 'List User',
+            'user' => User::paginate(15),
+        ]);
+    }
 
     public function update(Request $request)
     {

@@ -53,6 +53,7 @@ class GalleryController extends Controller
         }
 
         $validatedData = $validator->validated();
+        $request->file('url')->store('public/gallery');
 
         $validatedData['url'] = config('app.base_image') . $request->file('url')->store('gallery');
 

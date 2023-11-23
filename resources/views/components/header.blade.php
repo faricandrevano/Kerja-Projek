@@ -20,7 +20,7 @@
                 </button>
                 <a href="{{ route('home') }}" class="flex">
                     <img src="{{ asset('favicon-32x32.png') }}" class="mr-3 h-9 sm:h-9" alt="Shamo Logo" />
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Shamo</span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">TokoKU</span>
                 </a>
             </div>
             <div class="flex items-center lg:order-2">
@@ -65,11 +65,6 @@
                             <a href="{{ route('profile') }}"
                                 class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 {{ Request::is('profile*') ? 'text-primary-600' : '' }} dark:text-gray-400 dark:hover:text-white">My
                                 profile</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Account
-                                settings</a>
                         </li>
                     </ul>
                     <ul class="py-1 font-light text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">

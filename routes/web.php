@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,6 +60,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('product/gallery/{gallery}', [GalleryController::class, 'edit'])->name('product/gallery/edit');
         Route::put('product/gallery/{gallery}', [GalleryController::class, 'update'])->name('product/gallery/edit');
         Route::delete('product/gallery', [GalleryController::class, 'delete'])->name('product/gallery/delete');
+
+        Route::get('user',[UserController::class,'userShow'])->name('user/show');
+
+        Route::get('report',[ReportController::class,'index'])->name('report/show');
+        Route::get('showReport',[ReportController::class,'lihat'])->name('report/shows');
+        Route::get('generate',[ReportController::class,'generate'])->name('report/download');
 
         Route::get('transaction', [TransactionController::class, 'index'])->name('transaction');
         Route::put('transaction', [TransactionController::class, 'update'])->name('transaction');
